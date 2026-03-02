@@ -3,5 +3,5 @@ class Config {
   static String secret = "cs_513a8e2df1c720d3c90f4f9e0f56dead9bf77efa";
   static String apiURL = "code.com.kw";
   static String apiEndPoint = "/wp-json/wc/v3/";
-  static String categoriesURL = "/products/categories";
+  static String categoriesURL = "products/categories";
 }
