@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:provider/provider.dart';
 import 'package:snippet_coder_utils/hex_color.dart';
 import 'package:woocommerce_app/pages/categories/category_item_card_widget.dart';
+import 'package:woocommerce_app/provider/products_provider.dart';
 import '../../api/api_service.dart';
 import '../../models/category_model.dart';
 
@@ -46,7 +48,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         int index = e.key;
         CategoryModel categoryItem = e.value;
         return GestureDetector(
-          onTap: () => {},
+          onTap: () => onCategoryItemClicked(context, categoryItem),
           child: Container(
             padding: EdgeInsets.all(10),
             child: CategoryItemCardWidget(
@@ -76,5 +78,15 @@ class _CategoriesPageState extends State<CategoriesPage> {
         );
       },
     );
+  }
+
+  void onCategoryItemClicked(BuildContext context, CategoryModel categoryItem){
+    var productProvider = Provider.of<ProductsProvider>(context, listen: false);
+
+    productProvider.setProductCategory(categoryItem.categoryId);
+    Navigator.of(context).pushNamed("/products", arguments: {
+      'catId': categoryItem.categoryId,
+      'catName': categoryItem.categoryName,
+    });
   }
 }

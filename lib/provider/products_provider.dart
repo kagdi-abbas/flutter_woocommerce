@@ -80,7 +80,7 @@ class ProductsProvider with ChangeNotifier{
   }
 
   setProductCategory(val){
-    _categoryId = val;
+    _categoryId = val.toString();
     _strSearch = "";
     resetStreams();
     fetchProducts(1);

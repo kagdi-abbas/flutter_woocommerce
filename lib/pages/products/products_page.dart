@@ -64,7 +64,7 @@ class _ProductsPageState extends State<ProductsPage> {
           ),
         ),
         actions: [
-
+          _productFilters(),
         ],
         title: Container(
           padding: EdgeInsets.symmetric(horizontal: 25),
@@ -129,6 +129,36 @@ class _ProductsPageState extends State<ProductsPage> {
 
         return const Center(child: CircularProgressIndicator(),);
       },
+    );
+  }
+
+  Widget _productFilters(){
+    return PopupMenuButton(
+      onSelected: (sortBy) {
+        var productProvider = Provider.of<ProductsProvider>(context, listen: false);
+        productProvider.resetStreams();
+        productProvider.setSortOrder(sortBy);
+        productProvider.fetchProducts(_page, categoryId: categoryId.toString());
+      },
+      itemBuilder: (BuildContext context) {
+        return _sortByOptions.map(
+          (item) {
+            return PopupMenuItem(
+              value: item,
+              child: Container(
+                child: Text(item.text),
+              ),
+            );
+          },
+        ).toList();
+      },
+      icon: Container(
+        padding: EdgeInsets.only(right: 25),
+        child: Icon(
+          Icons.sort, 
+          color: Colors.black,
+        ),
+      ),
     );
   }
 }

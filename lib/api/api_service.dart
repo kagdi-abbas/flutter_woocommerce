@@ -62,11 +62,11 @@ class APIService {
     }
 
     if(pageSize != null){
-      queryString["per_page"] = pageSize;
+      queryString["per_page"] = pageSize.toString();
     }
 
     if(pageNumber != null){
-      queryString["page"] = pageNumber;
+      queryString["page"] = pageNumber.toString();
     }
 
     if(categoryId != null){
