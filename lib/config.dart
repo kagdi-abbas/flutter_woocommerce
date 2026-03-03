@@ -4,4 +4,6 @@ class Config {
   static String apiURL = "code.com.kw";
   static String apiEndPoint = "/wp-json/wc/v3/";
   static String categoriesURL = "products/categories";
+
+  static String productsURL = "products";
 }
