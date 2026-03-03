@@ -63,26 +63,26 @@ class ProductsProvider with ChangeNotifier{
     if(itemModel!.isNotEmpty){
       _productsList.addAll(itemModel);
     }
-
+  
     setLoadMoreState(LoadMoreStatus.STABLE);
     notifyListeners();
+  }
 
-    setSortOrder(SortBy sortBy){
-      _sortBy = sortBy;
-      resetStreams();
-    }
+  setSortOrder(SortBy sortBy){
+    _sortBy = sortBy;
+    resetStreams();
+  }
 
-    setSearchStr(val){
-      _strSearch = val;
-      resetStreams();
-      fetchProducts(1);
-    }
+  setSearchStr(val){
+    _strSearch = val;
+    resetStreams();
+    fetchProducts(1);
+  }
 
-    setProductCategory(val){
-      _categoryId = val;
-      _strSearch = "";
-      resetStreams();
-      fetchProducts(1);
-    }
+  setProductCategory(val){
+    _categoryId = val;
+    _strSearch = "";
+    resetStreams();
+    fetchProducts(1);
   }
 }
