@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:woocommerce_app/pages/dashboard/dashboard_page.dart';
+import 'package:woocommerce_app/pages/products/product_details_page.dart';
 import 'package:woocommerce_app/pages/products/products_page.dart';
 import 'package:woocommerce_app/provider/products_provider.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder> {
           '/' : (context) => _defaultHome,
           '/products' : (context) => ProductsPage(),
+          '/product-details' : (context) => ProductDetailsPage(),
         }
       ),
     ); 
