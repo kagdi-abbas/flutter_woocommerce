@@ -101,7 +101,7 @@ class APIService {
       Config.apiEndPoint + Config.productsURL,
       queryString,
     );
-
+    print(url);
 
     var response = await client.get(url, headers: requestHeaders);
 

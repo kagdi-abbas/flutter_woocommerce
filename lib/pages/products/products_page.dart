@@ -169,7 +169,6 @@ class _ProductsPageState extends State<ProductsPage> {
     Navigator.of(context).pushNamed("/product-details", arguments: {
       'productId': model.productId,
       'productName': model.productName,
-      
     });
   }
 }

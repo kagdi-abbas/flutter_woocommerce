@@ -12,7 +12,7 @@ class ProductModel {
   List<ImageModel>? images;
   List<int>? relatedIds;
 
-  ProductModel(
+  ProductModel({
     this.productId,
     this.productName,
     this.price,
@@ -20,7 +20,7 @@ class ProductModel {
     this.salePrice,
     this.images,
     this.relatedIds,
-  );
+  });
 
   ProductModel.fromJson(Map<String, dynamic> json) {
     productId = json['id'];
