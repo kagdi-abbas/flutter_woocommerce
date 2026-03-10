@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:woocommerce_app/config.dart';
 import 'package:woocommerce_app/models/category_model.dart';
+import 'package:woocommerce_app/models/customer_model.dart';
 import 'package:woocommerce_app/models/products_item.dart';
 
 class APIService {
@@ -147,6 +148,35 @@ class APIService {
     }
     else {
       return null;
+    }
+  }
+
+  static Future<bool> registerUser(CustomerModel model) async {
+    var authToken = base64.encode(
+      utf8.encode("${Config.key}:${Config.secret}",),
+    );
+
+    Map<String, String> requestHeaders = {
+      'Content-Type': 'application/json',
+      'authorization': 'Basic $authToken',
+    };
+
+    var url = Uri.https(
+      Config.apiURL,
+      Config.apiEndPoint + Config.customersURL,
+    );
+
+    var response = await client.post(
+      url,
+      headers: requestHeaders,
+      body: jsonEncode(model.toJson(),),
+    );
+
+    if(response.statusCode == 201){
+      return true;
+    }
+    else{
+      return false;
     }
   }
 }

@@ -6,4 +6,5 @@ class Config {
   static String categoriesURL = "products/categories";
 
   static String productsURL = "products";
+  static String customersURL = "customers";
 }
