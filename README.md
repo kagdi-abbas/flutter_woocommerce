@@ -18,7 +18,7 @@ bashflutter doctor
 ## Getting Started
 1. Clone the repository
   bashgit clone https://github.com/kagdi-abbas/flutter_woocommerce.git  
-  cd repository-name  
+  cd flutter_woocommerce  
 2. Install dependencies  
   bashflutter pub get  
 3. Run the app  
