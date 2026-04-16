@@ -3,6 +3,8 @@ Flutter App to build mobile app for an exisiting Woocommerce store.
 This is a starter project inspired by Snippet Coder's Woocommerce tutorial.  
 https://www.youtube.com/watch?v=6iQjW2nLgIk&list=PL7zgwanvi8_M6sq2qbGbT5XWhGoUYwa3T
 
+If you follow the tutorial verbatim, a lot of things may not work. This is my attempt at reccreating this project in 2026.
+
 Prerequisites  
   
 - Flutter SDK (>= 3.x.x)
