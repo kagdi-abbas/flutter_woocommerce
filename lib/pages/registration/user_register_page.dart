@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:snippet_coder_utils/FormHelper.dart';
 import 'package:snippet_coder_utils/ProgressHUD.dart';
@@ -188,7 +189,38 @@ class _RegisterPageState extends State<RegisterPage> {
               txtColor: Colors.white,
               borderRadius: 20,
             ),
-          )
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: EdgeInsets.only(right: 25),
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: "Already have an account?",
+                    ),
+                    TextSpan(
+                      text: " Sign in",
+                      style: TextStyle(
+                        color: Colors.blue
+                      ),
+                      recognizer: TapGestureRecognizer()..onTap = () {
+                        Navigator.of(context).pushNamed("/login");
+                      }
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

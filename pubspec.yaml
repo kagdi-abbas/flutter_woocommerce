@@ -36,6 +36,7 @@ dependencies:
   http: ^1.2.0
   snippet_coder_utils: ^1.0.15
   provider: ^6.1.1
+  api_cache_manager: ^1.0.2
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,4 +66,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/icons/
+    - assets/
